@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eshan Ahmad</title>
+  <meta name="description" content="Eshan Ahmad — PPEL student at the University of Florida. Policy research, family-office growth work, debate coaching, and student investing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3ece3;
+      --bg-soft: #faf6f0;
+      --ink: #241914;
+      --muted: #5e4f46;
+      --line: #ddd2c4;
+      --accent: #8f3a24;
+      --accent-deep: #6e2c1b;
+      --olive: #3d4f42;
+      --olive-soft: #e4ebe4;
+      --shadow: 0 18px 40px rgba(36, 25, 20, 0.06);
+      --radius: 18px;
+      --max: 1080px;
+      --space: clamp(4.5rem, 8vw, 8rem);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 4.75rem;
+    }
+
+    body {
+      font-family: Outfit, "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 8% -10%, #efe2d2 0%, transparent 55%),
+        radial-gradient(900px 420px at 100% 8%, #ead9c8 0%, transparent 50%),
+        var(--bg);
+    }
+
+    a {
+      color: var(--accent-deep);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    a:focus-visible,
+    .nav a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--ink);
+      color: var(--bg-soft);
+      padding: 0.6rem 1rem;
+      z-index: 20;
+    }
+
+    .skip:focus {
+      top: 1rem;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(243, 236, 227, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.15rem 0;
+    }
+
+    .mark {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.7rem 1.35rem;
+      list-style: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: var(--space) 0 5.5rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: end;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .lede {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .hero-aside {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-aside p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.35rem 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    section {
+      padding: 0 0 var(--space);
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--olive);
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      letter-spacing: -0.03em;
+      font-weight: 600;
+      margin-bottom: 1.15rem;
+      max-width: 16rem;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .intro p + p {
+      margin-top: 1.15rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.75rem;
+    }
+
+    .chip {
+      background: var(--olive-soft);
+      color: var(--olive);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    article {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 2.1rem;
+    }
+
+    article header {
+      position: static;
+      background: none;
+      backdrop-filter: none;
+      border: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.25rem;
+      align-items: baseline;
+      margin-bottom: 0.85rem;
+    }
+
+    h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .when {
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    article ul {
+      padding-left: 1.15rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .panel {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .panel ul {
+      list-style: none;
+      color: var(--muted);
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .panel li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2.5rem 0 3.5rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      :root {
+        --space: 3.4rem;
+      }
+
+      h2 {
+        max-width: none;
+      }
+
+      .hero,
+      .intro,
+      .split,
+      article header {
+        grid-template-columns: 1fr;
+      }
+
+      article header {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .intro {
+        gap: 1.25rem;
+      }
+
+      .hero {
+        gap: 2.25rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <a class="mark" href="#top">Eshan Ahmad</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#notes">Notes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" id="top">
+      <div>
+        <p class="eyebrow">Gainesville · PPEL · Class of 2029</p>
+        <h1>Building arguments, markets, and better briefs.</h1>
+        <p class="lede">
+          I’m a University of Florida student in Philosophy, Politics, Economics, and Law.
+          The short version of my resume: I research AI policy, help consumer brands grow,
+          coach national-circuit debate, and invest on a student-run fund.
+        </p>
+        <p class="contact">
+          <a href="mailto:eahmad@ufl.edu">eahmad@ufl.edu</a>
+          <a href="tel:+13214371718">(321) 437-1718</a>
+        </p>
+      </div>
+      <aside class="hero-aside">
+        <p>A few numbers that sit behind the work.</p>
+        <div class="stats">
+          <p class="stat"><strong>3.98</strong><span>GPA at Florida</span></p>
+          <p class="stat"><strong>1510</strong><span>SAT · 780 math</span></p>
+          <p class="stat"><strong>$1.9M</strong><span>GSIF assets under management</span></p>
+          <p class="stat"><strong>#1</strong><span>Former NDCA Averill ranking</span></p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="wrap intro" id="about">
+      <div>
+        <p class="section-label">About</p>
+        <h2>Classical training, practical work.</h2>
+      </div>
+      <div>
+        <p>
+          I study in the Hamilton School for Classical and Civic Education, with minors in
+          Business Administration and Statistics. Coursework that actually shows up in my work
+          includes Business Finance, Foundations of Business Analytics &amp; AI, and Programming
+          with Data in R.
+        </p>
+        <p>
+          Off campus I care about espresso extraction, lifting, and postmodern philosophy —
+          Virilio, Baudrillard, and the language of structural violence. The through-line is
+          the same as the resume: take a messy brief, find the argument, and make it usable.
+        </p>
+        <div class="chips" aria-label="Focus areas">
+          <span class="chip">AI governance</span>
+          <span class="chip">Consumer growth</span>
+          <span class="chip">Equity research</span>
+          <span class="chip">Debate coaching</span>
+          <span class="chip">Legal analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="experience">
+      <p class="section-label">Experience</p>
+      <h2>Where the resume spends most of its ink.</h2>
+      <div class="timeline">
+        <article>
+          <header>
+            <h3>RGN Family Office</h3>
+            <p class="when">June – August 2026 · Aspen, CO</p>
+          </header>
+          <p class="meta">Summer intern, 30 hours per week · Après Cookies portfolio company</p>
+          <ul>
+            <li>Supported the family office’s growth strategy for Après Cookies, a DTC and B2B consumer brand.</li>
+            <li>Built four vertical-specific revenue channels and automated outreach that grew B2B pipeline value by more than 50%.</li>
+            <li>Engineered agentic financial and retention models from transaction and marketing data, then integrated seven marketing flows that generated 13% of revenue and more than doubled conversion — informing GTM for new product releases.</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h3>Lake Highland Preparatory School</h3>
+            <p class="when">June 2025 – Present · Hybrid, Orlando</p>
+          </header>
+          <p class="meta">Private coach · former #1-ranked debater (NDCA Averill)</p>
+          <ul>
+            <li>Coach debate one-on-one for about 16 students inside an 80+ student program ranked top 10 internationally.</li>
+            <li>On-site at four tournaments in 2025–26, with remote advising and weekly argument strategy sessions.</li>
+            <li>Write 30+ pages of monthly briefings and live counter-strategies against top-ranked opponents, including a team as high as #13 of 1,793 internationally.</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h3>UF Warrington · Public Utility Research Center</h3>
+            <p class="when">September 2025 – May 2026 · Gainesville</p>
+          </header>
+          <p class="meta">Undergraduate policy researcher with Dr. Mark A. Jamison</p>
+          <ul>
+            <li>Researched AI governance and market-regulation policy.</li>
+            <li>Interviewed five senior fellows at R Street, AEI, Meta, and AWS to synthesize court precedent for AI policy analysis.</li>
+            <li>Condensed three years of AI privacy case law — 30+ pages of legal and economic analysis — into a one-pager on risks, enforcement gaps, and next steps for Capitol Hill.</li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h3>Osborne &amp; Francis Law Firm</h3>
+            <p class="when">Summers 2024 &amp; 2025 · Gainesville</p>
+          </header>
+          <p class="meta">Legal intern</p>
+          <ul>
+            <li>Synthesized 500+ pages of testimony from a seven-figure litigation matter into decision-ready strategic recommendations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="leadership">
+      <p class="section-label">Leadership</p>
+      <h2>Funds, clients, and a five-person room.</h2>
+      <div class="split">
+        <article>
+          <header>
+            <h3>Gator Student Investment Fund</h3>
+            <p class="when">August 2025 – Present</p>
+          </header>
+          <p class="meta">Healthcare sector associate · ~$1.9M AUM</p>
+          <ul>
+            <li>Analyze equities and help allocate a 64-student fund, using Capital IQ and Bloomberg against an S&amp;P 1000 benchmark.</li>
+            <li>Wrote full pitches — thesis, catalysts, risks — on five public healthcare names, using channel checks, alternative data, and sensitized DCFs for a ~$106k position.</li>
+          </ul>
+        </article>
+        <article>
+          <header>
+            <h3>Rem on Campus, UF</h3>
+            <p class="when">January 2026 – Present</p>
+          </header>
+          <p class="meta">Senior strategist · pro bono consulting</p>
+          <ul>
+            <li>Serve one client a semester, from SMBs to nonprofits, with a five-person team in PowerPoint and Excel.</li>
+            <li>For Rovex, designed a four-hospital market-entry roadmap and models for four transport corridors — a ~105-day pilot projected to save 180k minutes in OR cases.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap split" id="notes">
+      <div class="panel">
+        <p class="section-label">Competitions</p>
+        <h2>On the tape.</h2>
+        <ul>
+          <li><strong>2026 Florida Investment Conference</strong> — UF bracket, 1st place.</li>
+          <li><strong>2026 USIT</strong> — semifinalist.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <p class="section-label">Campus &amp; otherwise</p>
+        <h2>What else I keep.</h2>
+        <ul>
+          <li><strong>Memberships:</strong> Islam on Campus (Historian), FBK Speech &amp; Debate staff, Freshman Leadership Council.</li>
+          <li><strong>Interests:</strong> weightlifting, espresso extraction, postmodern philosophy.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Eshan Ahmad · University of Florida</p>
+    <p><a href="mailto:eahmad@ufl.edu">Write me</a></p>
+  </footer>
+</body>
+</html>
